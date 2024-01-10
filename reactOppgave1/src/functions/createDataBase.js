@@ -1,4 +1,6 @@
 import * as fs from "node:fs";
+
+/* Trengte ikke options her likevell. Men greit å inkludere. */
 const fetchApi = async (url, options = null) => {
   const response = options ? await fetch(url, options) : await fetch(url);
   const result = await response.json();
