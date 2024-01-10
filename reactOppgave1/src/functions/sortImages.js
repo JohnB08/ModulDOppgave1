@@ -9,12 +9,27 @@ class ImageClass {
   description;
   isWide;
   imageUrl;
-  constructor(name, creatorName, description, isWide, imageUrl) {
+  likeCount;
+  portfolio;
+  twitterUserName;
+  constructor(
+    name,
+    creatorName,
+    description,
+    isWide,
+    imageUrl,
+    likeCount,
+    portfolio,
+    twitterUserName
+  ) {
     this.name = name;
     this.creatorName = creatorName;
     this.description = description;
     this.isWide = isWide;
     this.imageUrl = imageUrl;
+    this.likeCount = likeCount;
+    this.portFolioUrl = portfolio;
+    this.twitterURL = twitterUserName;
   }
 }
 
@@ -26,7 +41,10 @@ const imageSorter = (array) => {
         element.user.name,
         element.alt_description,
         true,
-        element.urls.small
+        element.urls.small,
+        element.likes,
+        element.user.portfolio_url,
+        element.user.twitter_username
       );
       adjustedImageArray.push(adjustedElement);
     } else {
@@ -35,7 +53,10 @@ const imageSorter = (array) => {
         element.user.name,
         element.alt_description,
         false,
-        element.urls.small
+        element.urls.small,
+        element.likes,
+        element.user.portfolio_url,
+        element.user.twitter_username
       );
       adjustedImageArray.push(adjustedElement);
     }
@@ -43,7 +64,6 @@ const imageSorter = (array) => {
 };
 console.log("Making data smaller");
 imageSorter(imageArray);
-export { imageArray };
 console.log("Writing to file");
 fs.writeFileSync(filePath, JSON.stringify(adjustedImageArray, null, 2));
 console.log("Writing done");
