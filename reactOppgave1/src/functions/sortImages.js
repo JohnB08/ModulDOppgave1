@@ -43,6 +43,7 @@ const imageSorter = (array) => {
 };
 console.log("Making data smaller");
 imageSorter(imageArray);
+export { imageArray };
 console.log("Writing to file");
 fs.writeFileSync(filePath, JSON.stringify(adjustedImageArray, null, 2));
 console.log("Writing done");
