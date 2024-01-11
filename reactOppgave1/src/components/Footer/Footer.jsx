@@ -1,4 +1,9 @@
 import Style from "./Footer.module.css";
+
+/**
+ * returner et footer element med min github
+ * @returns
+ */
 export default function Footer() {
   return (
     <footer className={Style.footer}>

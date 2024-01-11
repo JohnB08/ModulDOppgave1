@@ -1,7 +1,14 @@
 import propTypes from "prop-types";
 import Style from "./tallImage.module.css";
 import SosialLinks from "../SocialLinks/SosialLinks";
+
+/**
+ * Returner et TallImageMaker react element
+ * @param {*} param0
+ * @returns
+ */
 export default function TallImageMager({ imageData }) {
+  /* Destrukturerer ut det jeg trenger fra imageData, det gjør koden mer leslig. */
   const { imageUrl, description, name, creatorName } = imageData;
   return (
     <div className={Style.ImageCard}>

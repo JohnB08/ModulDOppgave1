@@ -1,5 +1,11 @@
 import propTypes from "prop-types";
 import Styles from "./SosialLinks.module.css";
+
+/**
+ * Returner et element med social links
+ * @param {*} param0
+ * @returns
+ */
 export default function SosialLinks({ imageData }) {
   const { likeCount, portFolioUrl, twitterURL } = imageData;
   return (
