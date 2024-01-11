@@ -1,21 +1,24 @@
 import propTypes from "prop-types";
 import Style from "./wideImage.module.css";
 import SosialLinks from "../SocialLinks/SosialLinks";
-export default function WideImageMaker({ object }) {
+export default function WideImageMaker({ imageData }) {
+  const { imageUrl, description, name, creatorName } = imageData;
   return (
     <div className={Style.ImageCard}>
       <div className={Style.ImageContainer}>
-        <img src={object.imageUrl} alt={object.description} />
+        <img src={imageUrl} alt={description} />
       </div>
       <div className={Style.TextContainer}>
-        <h3>{object.name ? object.name : "Unnamed"}</h3>
-        <p>{object.description}</p>
-        <h3>Made by: {object.creatorName}</h3>
-        <SosialLinks object={object} />
+        <div className={Style.infoContainer}>
+          <h3>{name ? name : "Untitled Image"}</h3>
+          <p>{description}</p>
+          <h3>Made by: {creatorName}</h3>
+        </div>
+        <SosialLinks imageData={imageData} />
       </div>
     </div>
   );
 }
 WideImageMaker.propTypes = {
-  object: propTypes.object,
+  imageData: propTypes.object,
 };

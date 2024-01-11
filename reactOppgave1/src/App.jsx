@@ -2,6 +2,7 @@ import imageData from "./Data/adjustedImageData.json";
 import "./App.css";
 import MakeImageContainer from "./components/ImageContainer/ImageContainer.jsx";
 import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/footer";
 
 function App() {
   console.log(imageData);
@@ -9,7 +10,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <MakeImageContainer array={imageData} />
+      <MakeImageContainer imageDataArray={imageData} />
+      <Footer />
     </>
   );
 }

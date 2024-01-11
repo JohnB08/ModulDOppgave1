@@ -1,0 +1,17 @@
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+.socials a {
+  color: var(--dark);
+  font-weight: bold;
+  transition: 250ms;
+}
+.socials a:hover {
+  text-decoration: underline var(--accent);
+}
