@@ -19,7 +19,7 @@ export default function TallImageMager({ imageData }) {
         <h3>{name ? name : "Unnamed"}</h3>
         <p>{description}</p>
         <h3>Made by: {creatorName}</h3>
-        <SosialLinks imageData={imageData} />
+        <SosialLinks imageData={imageData} className={Style.socials} />
       </div>
     </div>
   );

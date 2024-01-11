@@ -1,4 +1,3 @@
-import { imageArray } from "./importDataBase.js";
 import * as fs from "node:fs";
 let adjustedImageArray = [];
 let filePath = "../Data/adjustedImageData.json";
@@ -33,7 +32,8 @@ class ImageClass {
   }
 }
 
-const imageSorter = (array) => {
+export const imageSorter = (array) => {
+  console.log("Making data smaller");
   array.forEach((element) => {
     if (element["width"] > element["height"]) {
       const adjustedElement = new ImageClass(
@@ -61,9 +61,7 @@ const imageSorter = (array) => {
       adjustedImageArray.push(adjustedElement);
     }
   });
+  console.log("Writing to file");
+  fs.writeFileSync(filePath, JSON.stringify(adjustedImageArray, null, 2));
+  console.log("Writing done");
 };
-console.log("Making data smaller");
-imageSorter(imageArray);
-console.log("Writing to file");
-fs.writeFileSync(filePath, JSON.stringify(adjustedImageArray, null, 2));
-console.log("Writing done");

@@ -21,7 +21,7 @@ export default function WideImageMaker({ imageData }) {
           <p>{description}</p>
           <h3>Made by: {creatorName}</h3>
         </div>
-        <SosialLinks imageData={imageData} />
+        <SosialLinks imageData={imageData} className={Style.socials} />
       </div>
     </div>
   );

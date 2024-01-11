@@ -6,10 +6,10 @@ import Styles from "./SosialLinks.module.css";
  * @param {*} param0
  * @returns
  */
-export default function SosialLinks({ imageData }) {
+export default function SosialLinks({ imageData, className }) {
   const { likeCount, portFolioUrl, twitterURL } = imageData;
   return (
-    <div className={Styles.sosialContainer}>
+    <div className={(Styles.sosialContainer, className)}>
       <p>Likes: {likeCount}</p>
       <div className={Styles.socials}>
         {portFolioUrl ? (
@@ -36,4 +36,5 @@ export default function SosialLinks({ imageData }) {
 }
 SosialLinks.propTypes = {
   imageData: propTypes.object,
+  className: propTypes.string,
 };

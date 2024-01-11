@@ -1,4 +1,4 @@
-import * as fs from "node:fs";
+import { imageSorter } from "./sortImages.js";
 
 /* Trengte ikke options her likevell. Men greit å inkludere. */
 const fetchApi = async (url, options = null) => {
@@ -7,7 +7,6 @@ const fetchApi = async (url, options = null) => {
   return result;
 };
 const URL = "https://api.unsplash.com/search/photos?page=1&query=minimal";
-const dataFilePath = "../Data/imageData.json";
 
 const addAuth = (url) => {
   const accessKey = process.env.ACCESS_Key;
@@ -25,7 +24,7 @@ const writeData = async (URL) => {
   console.log("fetching images");
   const images = await getImages(URL);
   console.log("writing images");
-  fs.writeFileSync(dataFilePath, images, null, 2);
+  imageSorter(images.results);
   console.log("writing done");
 };
 
