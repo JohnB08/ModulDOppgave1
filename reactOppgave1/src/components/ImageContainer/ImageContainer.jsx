@@ -4,13 +4,17 @@ import TallImageMager from "../TallImage/imageCardTall";
 import Style from "./ImageContainer.module.css";
 
 export default function MakeImageContainer({ array }) {
-  const cardElements = [];
-  for (let i = 0; i < array.length; i++) {
-    array[i].isWide
-      ? cardElements.push(<WideImageMaker object={array[i]} key={i} />)
-      : cardElements.push(<TallImageMager object={array[i]} key={i} />);
-  }
-  return <div className={Style.ImageContainer}>{cardElements}</div>;
+  return (
+    <div className={Style.ImageContainer}>
+      {array.map((element, i) => {
+        return element.isWide ? (
+          <WideImageMaker object={element} key={i} />
+        ) : (
+          <TallImageMager object={element} key={i} />
+        );
+      })}
+    </div>
+  );
 }
 MakeImageContainer.propTypes = {
   array: propTypes.array,
