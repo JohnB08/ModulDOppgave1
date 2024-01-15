@@ -18,3 +18,8 @@
 .links a:hover {
   text-decoration: underline var(--accent);
 }
+@media only screen and (max-width: 800) {
+  .links a {
+    font-size: 1.25rem;
+  }
+}

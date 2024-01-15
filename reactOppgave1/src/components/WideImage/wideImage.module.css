@@ -15,10 +15,24 @@
 }
 .TextContainer {
   display: flex;
+  margin: auto 0;
   text-align: start;
   justify-content: space-around;
   color: var(--dark);
 }
 .TextContainer .socials {
   text-align: end;
+}
+
+@media only screen and (max-width: 800px) {
+  .TextContainer .Title {
+    display: none;
+  }
+  .TextContainer .descText {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+  .socials {
+    font-size: 1.125rem;
+  }
 }

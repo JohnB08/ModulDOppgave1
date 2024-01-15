@@ -17,8 +17,8 @@ export default function WideImageMaker({ imageData }) {
       </div>
       <div className={Style.TextContainer}>
         <div className={Style.infoContainer}>
-          <h3>{name ? name : "Untitled Image"}</h3>
-          <p>{description}</p>
+          <h3 className={Style.Title}>{name ? name : "Untitled Image"}</h3>
+          <p className={Style.descText}>{description}</p>
           <h3>Made by: {creatorName}</h3>
         </div>
         <SosialLinks imageData={imageData} className={Style.socials} />

@@ -16,8 +16,8 @@ export default function TallImageMager({ imageData }) {
         <img src={imageUrl} alt={description} />
       </div>
       <div className={Style.TextContainer}>
-        <h3>{name ? name : "Unnamed"}</h3>
-        <p>{description}</p>
+        <h3 className={Style.Title}>{name ? name : "Unnamed"}</h3>
+        <p className={Style.descText}>{description}</p>
         <h3>Made by: {creatorName}</h3>
         <SosialLinks imageData={imageData} className={Style.socials} />
       </div>
