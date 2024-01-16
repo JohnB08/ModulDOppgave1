@@ -23,6 +23,7 @@ const getImages = async (URL) => {
   return fetchImages;
 };
 
+
 /* Her henter den de ti første bildene fra unsplash under kategorien
 minimalist, og sender de til "imagesorter"
 Da får jeg ut en mye lettere json fil med akkurat den dataen jeg ville ha for oppgaven.

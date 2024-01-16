@@ -1,6 +1,7 @@
 import * as fs from "node:fs";
 let adjustedImageArray = [];
 let filePath = "../Data/adjustedImageData.json";
+let filePathDataPure = "../Data/pureData.json";
 
 /* Dette var litt overkill, men ville prøve å leke lett med classConstructor. */
 class ImageClass {
@@ -25,10 +26,16 @@ class ImageClass {
   }
 }
 
+const postPureData = (data) => {
+  fs.writeFileSync(filePathDataPure, JSON.stringify(data));
+};
+
 /* Datastrukturen ble valgt ut etter å ha sett hva data jeg egentlig trengte
 for å lage en lett og enkel react oppgave. Jeg følte mengden data
 som egentlig følger med når du caller til unsplash sin api var alt for mye*/
 export const imageSorter = (array) => {
+  console.log("Saving original data");
+  postPureData(array);
   console.log("Making data smaller");
   array.forEach((element) => {
     const adjustedElement = new ImageClass(
