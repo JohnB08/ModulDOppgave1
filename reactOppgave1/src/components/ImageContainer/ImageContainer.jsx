@@ -5,7 +5,9 @@ import Style from "./ImageContainer.module.css";
 
 /**
  * Leverer en "ImageContainer" fylt med enten wideimage eller tallimage om element.isWide
- * @param {*} param0
+ * @param {{
+ * imageDataArray: 
+ * }} param0
  * @returns
  */
 export default function MakeImageContainer({ imageDataArray }) {
