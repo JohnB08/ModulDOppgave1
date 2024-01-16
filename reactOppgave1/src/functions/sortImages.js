@@ -4,14 +4,6 @@ let filePath = "../Data/adjustedImageData.json";
 
 /* Dette var litt overkill, men ville prøve å leke lett med classConstructor. */
 class ImageClass {
-  name;
-  creatorName;
-  description;
-  isWide;
-  imageUrl;
-  likeCount;
-  portfolio;
-  twitterUserName;
   constructor(
     name,
     creatorName,
